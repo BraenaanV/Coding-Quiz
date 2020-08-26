@@ -1,0 +1,23 @@
+.container.scores{
+    
+}
+
+#viewHighscores{
+    
+}
+
+#time{
+    color: red;
+    
+}
+
+.container.main{
+    margin-right: 25%;
+    margin-left: 25%;
+    text-align: center;
+}
+
+.btn-primary{
+    color: white;
+    background-color: purple;
+}
