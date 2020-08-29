@@ -7,21 +7,20 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-    
-    <body>
-        <div class = "container scores">
-            <a id = "view-highscores" href = "./highscores.html">View Highscores</a>
-          </div>
 
-        <div class ="container main">
-            <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your time by 10 seconds!</p>
-            <a class="btn btn-primary" href="./game.html">Start Quiz!</a>
-        </div>
+  <body>
+    <div class ="container quiz-score">
+        <h1 id = "you-scored">You scored : </h1>
+        <form class ="user-initials">
+          <label for = "initials">Enter your initials to save your score:</label>
+          <br>
+          <input type = "text" id="username" placeholder="Your initials">
+          <input type="submit" value="Submit" class = "btn" id="savescore" onclick="saveHighScore(event)">
+        </form>
+      </div>
 
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-      <script src = "home.js"></script>
-    </body>
-    </html>
+      <script src = "quizresults.js"></script>
+  </body>

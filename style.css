@@ -7,8 +7,11 @@
 }
 
 #time{
-    color: red;
-    
+    font-weight: bold;
+}
+
+#last-question-result{
+    font-weight: bold;
 }
 
 .container.main{
@@ -20,4 +23,75 @@
 .btn-primary{
     color: white;
     background-color: purple;
+}
+
+.container.quiz-questions{
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+#question{
+    font-weight: Bold;
+    font-size: 20px;
+}
+
+.choice{
+    border-style: solid;
+    border-color: black;
+    background-color: purple;
+    color: white;
+    margin: 15px;
+    width: fit-content;
+}
+
+.quiz-score{
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+.container.highscores{
+    width: 600px;
+    height: auto;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: auto;
+}
+
+.row {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #AFAFAF;
+  }
+
+.name {
+    position: relative;
+    display: inline-block;
+    width: 75%;
+    line-height: 45px;
+}
+  
+.score {
+    position: relative;
+    display: inline-block;
+    width: 25%;
+}
+
+#go-back{
+    border-style: solid;
+    border-color: black;
+    background-color: purple;
+    color: white;
+    width: fit-content;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#clear-scores{
+    border-style: solid;
+    border-color: black;
+    background-color: purple;
+    color: white;
+    width: fit-content;
 }

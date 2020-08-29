@@ -1,72 +1,72 @@
-//Selector variables
+//Selecting elements
 
 var highscoreEL = document.querySelector("#view-highscores");
 var quizTimerEl = document.querySelector("#time");
 var startButtonEl = document.querySelector(".btn-primary");
 
-//Questions
+const question = document.querySelector("#question");
+const choiceA = document.getElementById("A");
+const choiceB = document.getElementById("B");
+const choiceC = document.getElementById("C");
+const choiceD = document.getElementById("D");
 
-var questions = [{
-    question: "1. What tools have we learned up until now?",
-    choices: ["HTML","Javascript","CSS", "All of the above"],
-    correctAnswer: 3
-}, {
-    question: "2. Which Javascript statement is used for true or false?",
-    choices: ["String","Boolean","Object", "Array"],
-    correctAnswer: 1
-}, {
-    question: "3. Which of these is the primary editor for page styling?",
-    choices: ["JQuery","Microsoft Paint","CSS", "HTML"],
-    correctAnswer: 2
-}, {
-    question: "4. Arrays are enclosed in _____ ",
-    choices: ["{}","[]","**", ";;"],
-    correctAnswer: 1
-}, {
-    question: "5. How do you identify a class in CSS or Javascript?",
-    choices: ["className",".className","#className", "All of the above"],
-    correctAnswer: 1
-}, {
-    question: "6. What is a responsive page",
-    choices: ["A page that formats itself relative to the user's device","A fast loading webpage","An interactive webpage", "None of these"],
-    correctAnswer: 0
-}, {
-    question: "7. How do you add a line comment to Javascript?",
-    choices: [":/","#comment","Comment", "//"],
-    correctAnswer: 3
-}, {
-    question: "8. In webpage design, DOM stands for",
-    choices: ["Distributed Order Management","Document Object Model","Disk On Module", "Discrete Ordinate Method"],
-    correctAnswer: 1
-},
+var goBack = document.querySelector("#go-back");
 
-];
 
 
 //Countdown Timer
 
-var secondsLeft = 75;
+
+
+var highUsers = [];
+var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+
+var mostRecentScore = localStorage.getItem("mostRecentScore");
+
 
 startButtonEl.addEventListener("click", function setTime() {
+    quizRunning = true;
+    secondsLeft = 75;
     var timerInterval = setInterval(function() {
       secondsLeft--;
       quizTimerEl.textContent = "Time Left : " + secondsLeft;
+
+      if(quizRunning === false) {
+        clearInterval(timerInterval);
+    }
   
-      if(secondsLeft === 0) {
+      else if(secondsLeft <= 0) {
         clearInterval(timerInterval);
         alert("Out of time!");
       }
-  
+   
     }, 1000);
+    document.querySelector("#view-highscores").style.display = "none";
+    document.querySelector(".container.main").style.display = "none";
+    document.querySelector(".container.quiz-questions").style.display = "block";
+    document.querySelector("#time").style.display = "block";
+    questionGen();
   });
 
+// question & answer function
 
 
 
 
+// Event listeners
 
 
 
+goBack.addEventListener("click", function (){
+    document.querySelector(".container.quiz-score").style.display = "none";
+    document.querySelector("#last-question-result").style.display = "none";
+    document.querySelector(".container.highscores").style.display = "none";
+    document.querySelector(".container.main").style.display = "block";
+    document.querySelector("#view-highscores").style.display = "block";
+})
 
-
-
+highscoreEL.addEventListener("click", function() {
+    document.querySelector(".container.main").style.display = "none";
+    document.querySelector("#last-question-result").style.display = "none";
+    document.querySelector(".container.highscores").style.display = "block";
+});
